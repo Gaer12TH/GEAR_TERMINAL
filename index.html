@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[ GEAR_PROFILE.exe ]</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="matrix-bg">
+        <canvas id="matrix"></canvas>
+    </div>
+
+    <div class="container">
+        <div class="terminal-window" id="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="btn btn-close" onclick="closeTerminal()"></div>
+                    <div class="btn btn-minimize" onclick="minimizeTerminal()"></div>
+                    <div class="btn btn-maximize" onclick="maximizeTerminal()"></div>
+                </div>
+                <div class="terminal-title">GEAR_TERMINAL_v2.1.exe - [SECURE CONNECTION]</div>
+            </div>
+            
+            <div class="terminal-body">
+                <div class="scan-line"></div>
+                
+                <div class="ascii-art" onclick="playSound()">
+ ██████╗ ███████╗ █████╗ ██████╗ 
+██╔════╝ ██╔════╝██╔══██╗██╔══██╗
+██║  ███╗█████╗  ███████║██████╔╝
+██║   ██║██╔══╝  ██╔══██║██╔══██╗
+╚██████╔╝███████╗██║  ██║██║  ██║
+ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
+                </div>
+
+                <div class="command-line">
+                    <span class="prompt">root@system:~$</span> 
+                    <span class="typing">cat /home/gear/profile.dat</span>
+                </div>
+
+                <div class="interactive-commands">
+                    <button class="cmd-btn" onclick="runCommand('whoami')">whoami</button>
+                    <button class="cmd-btn" onclick="runCommand('ls -la')">ls -la</button>
+                    <button class="cmd-btn" onclick="runCommand('ps aux')">ps aux</button>
+                    <button class="cmd-btn" onclick="runCommand('netstat')">netstat</button>
+                    <button class="cmd-btn" onclick="runCommand('hack')">hack_mode</button>
+                    <button class="cmd-btn" onclick="runCommand('clear')">clear</button>
+                </div>
+
+                <div class="output-area" id="output"></div>
+
+                <div class="data-section" onclick="showDetails('personal')">
+                    <div class="data-row">
+                        <span class="data-label">[NAME]:</span>
+                        <span class="data-value glitch">นายมนพัทธ์ สุขสันติลาภ</span>
+                    </div>
+                    
+                    <div class="data-row">
+                        <span class="data-label">[ALIAS]:</span>
+                        <span class="data-value">>>> GEAR <<<</span>
+                    </div>
+                    
+                    <div class="data-row">
+                        <span class="data-label">[BIRTH_DATE]:</span>
+                        <span class="data-value">04.02.2550</span>
+                    </div>
+                    
+                    <div class="data-row">
+                        <span class="data-label">[LOCATION]:</span>
+                        <span class="data-value">98/33 หมู่ 1<br>
+                        ต.นิคมพัฒนา อ.นิคมพัฒนา<br>
+                        จ.ระยอง [THAILAND]</span>
+                    </div>
+                    
+                    <div class="data-row">
+                        <span class="data-label">[EMAIL]:</span>
+                        <span class="data-value">
+                            <a href="mailto:Gaer12TH@gmail.com" class="email-link" onclick="copyEmail(event)">Gaer12TH@gmail.com</a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="command-line">
+                    <span class="prompt">root@system:~$</span> 
+                    <span style="color: #00ff41;">STATUS: PROFILE_LOADED_SUCCESSFULLY ✓</span>
+                </div>
+            </div>
+            
+            <div class="status-bar" onclick="showSystemInfo()">
+                <span>CONNECTED | SECURE | ENCRYPTED</span>
+                <span id="uptime">SYSTEM_ONLINE: 24/7</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
